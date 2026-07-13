@@ -10,6 +10,7 @@ import xDripClient
 import LoopKit
 import LoopKitUI
 import HealthKit
+import LoopAlgorithm
 
 
 class xDripStatusModel: NSObject, ObservableObject {
@@ -18,7 +19,7 @@ class xDripStatusModel: NSObject, ObservableObject {
     let displayGlucosePreference: DisplayGlucosePreference
     var hasCompleted: (() -> Void)?
     
-    var preferredUnit: HKUnit {
+    var preferredUnit: LoopUnit {
         return displayGlucosePreference.unit
     }
     

@@ -9,6 +9,7 @@
 import LoopKit
 import HealthKit
 import Combine
+import LoopAlgorithm
 
 
 public class xDripAppGroup {
@@ -83,9 +84,9 @@ public class xDripAppGroup {
                 glucoseTrendType = GlucoseTrend(rawValue: rawGlucoseTrendType)
             }
             
-            var glucoseValue: HKQuantity?
+            var glucoseValue: LoopQuantity?
             if let rawGlucoseValue = reading["Value"] as? Double {
-                glucoseValue = HKQuantity(unit: .milligramsPerDeciliter, doubleValue: rawGlucoseValue)
+                glucoseValue = LoopQuantity(unit: .milligramsPerDeciliter, doubleValue: rawGlucoseValue)
             }
             
             var glucoseStartDate: Date?

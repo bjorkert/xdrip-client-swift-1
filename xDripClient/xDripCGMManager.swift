@@ -69,7 +69,13 @@ public class xDripCGMManager: NSObject, CGMManager {
     public var cgmManagerStatus: CGMManagerStatus {
         return CGMManagerStatus(hasValidSensorSession: true, device: nil)
     }
-    
+
+    public var pluginIdentifier: String { Self.pluginIdentifier }
+
+    public var inSignalLoss: Bool { false }
+
+    public var isInoperable: Bool { false }
+
     public var rawState: CGMManager.RawStateValue {
         return [:]
     }
@@ -346,8 +352,7 @@ public class xDripCGMManager: NSObject, CGMManager {
 }
 // MARK: - AlertResponder implementation
 extension xDripCGMManager {
-    public func acknowledgeAlert(alertIdentifier: Alert.AlertIdentifier, completion: @escaping (Error?) -> Void) {
-        completion(nil)
+    public func acknowledgeAlert(alertIdentifier: Alert.AlertIdentifier) async throws {
     }
 }
 

@@ -10,18 +10,19 @@ import Foundation
 import LoopKit
 import LoopKitUI
 import HealthKit
+import LoopAlgorithm
 
 public struct xDripReading: GlucoseValue, GlucoseDisplayable {
     
     public var trendType: GlucoseTrend?
     
-    public var trendRate: HKQuantity?
+    public var trendRate: LoopQuantity?
     
     public var isLocal: Bool = false
     
     public var glucoseRangeCategory: GlucoseRangeCategory?
     
-    public var quantity: HKQuantity
+    public var quantity: LoopQuantity
     
     public var startDate: Date
     
